@@ -1,0 +1,39 @@
+.employee-table-wrapper{
+    padding: 20px;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.employee-table{
+    background-color: black;
+    width: 100%;
+}
+
+.employee-detail-edit-btn{
+    margin-right: 10px;
+    background-color: #065ba9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.employee-detail-delete-btn{
+    margin-right: 10px;
+    background-color: #e92c30;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+}
+
+.employee-detail-column-title{
+    padding: 10px;
+}
+
+.employee-detail-tile-item{
+    
+    padding: 5px 10px;
+}

@@ -1,0 +1,17 @@
+.home-screen-header-wrapper{
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    color: #065ba9;
+}
+
+.new_employee-submit {
+    background-color: #065ba9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
