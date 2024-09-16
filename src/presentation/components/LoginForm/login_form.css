@@ -1,0 +1,47 @@
+.login-form-wrapper{
+}
+
+.form-heading{
+    font-size: large;
+    padding-bottom: 10px;
+}
+
+.form-input-wrapper{
+    padding-bottom: 10px;
+    color: green;
+}
+
+.form-control{
+    width: 40vh;
+    padding: 10px;
+    font-size: 23;
+}
+
+
+.button-submit {
+    background-color: #065ba9;
+    color: white;
+    border: none;
+    padding: 10px 50px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.button-cancel {
+    background-color: #e92c30;
+    color: white;
+    border: none;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.button-submit:disabled {
+    background-color: grey; 
+    cursor: not-allowed;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    gap: 10px; /* Optional: adds space between buttons, replace with desired value */
+  }

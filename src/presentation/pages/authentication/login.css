@@ -1,0 +1,18 @@
+.login-screen-wrapper {
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-heading{
+    text-align: center;
+}
+
+.login-screen-logo{
+    height: 20vh;
+}
+
+.login-screen-logo-heading{
+    padding-right: 50px;
+}
