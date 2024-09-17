@@ -4,6 +4,7 @@ import HomeSideDraw from '../../components/HomeSideDraw/home_side_draw';
 import './home.css';
 
 export default function HomeScreen(){
+    
     return<div className="home-screen-wrapper" >
       <HomeSideDraw />
       <div className='home-screen-section' >

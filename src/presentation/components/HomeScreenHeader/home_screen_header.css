@@ -15,3 +15,84 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+
+.modal-content {
+    background-color: white !important;
+    padding: 10px;
+    width: 20vw;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    text-align: center;
+    padding:  20px;
+    background-color: white !important;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white !important;
+}
+
+.new-employee-form{
+    background-color: white;
+}
+
+.modal-input-field{
+    padding: 10px;
+    width: 18vw;
+    margin: 5px 0px;
+    background-color: white !important;
+}
+
+.modal-gender-input-field{
+    padding: 10px;
+    width: 19.5vw;
+    margin: 5px 0px;
+    background-color: white !important;
+}
+
+.save-user-btn {
+    background-color: #065ba9;
+    
+    color: white;
+    border: none;
+    padding: 10px 45px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.cancel-user-btn {
+    background-color: #e92c30;
+    color: white;
+    border: none;
+    padding: 10px 45px;
+    cursor: pointer;
+}
+
+.new-employee-form-fields{
+    background-color: white;
+}
+
+.new-employee-form-field-label{
+    background-color: white;
+}
