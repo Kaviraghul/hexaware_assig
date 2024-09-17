@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./login_form.css";
-import { doSignInWithEmailAndPassword } from "../../../firebase/auth";
+import { doSignInWithEmailAndPassword } from "../../../services/firebase_user_services";
 import { Navigate, useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify"; // Import Toast components
-import 'react-toastify/dist/ReactToastify.css'; // Import Toast CSS
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import useAuth from "../../../context/auth_context";
 
 export default function LoginForm() {
@@ -14,7 +14,6 @@ export default function LoginForm() {
     const [userCredentials, setUserCredentials] = useState({
         email: "",
         password: "",
-        successMessage: null,
     });
 
     const [submit, setSubmit] = useState(true);
@@ -37,18 +36,10 @@ export default function LoginForm() {
         if (!isSigningIn) {
             setIsSigningIn(true);
             try {
-                await doSignInWithEmailAndPassword(userCredentials.email, userCredentials.password);
-                setUserCredentials((prevState) => ({
-                    ...prevState,
-                    successMessage: "Login successful",
-                }));
+                await doSignInWithEmailAndPassword(userCredentials);
                 toast.success("Login successful!");
                 navigate("/home"); 
             } catch (error) {
-                setUserCredentials((prevState) => ({
-                    ...prevState,
-                    errorMessage: error.message,
-                }));
                 toast.error(`Login failed: ${error.message}`);
             } finally {
                 setIsSigningIn(false);
@@ -61,7 +52,6 @@ export default function LoginForm() {
         setUserCredentials({
             email: "",
             password: "",
-            successMessage: null
         });
         setSubmit(true);
     }
