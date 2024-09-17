@@ -1,5 +1,7 @@
 import React from 'react';
 import './employee_details_table.css';
+import { db } from '../../../firebase/firebase';
+import { deleteDoc, doc } from 'firebase/firestore';
 
 export default function EmployeeTable({ employees }) {
 
@@ -7,9 +9,15 @@ export default function EmployeeTable({ employees }) {
     console.log(`Edit employee with ID: ${id}`);
   };
 
-  const handleDelete = (id) => {
-    console.log(`Delete employee with ID: ${id}`);
-  };
+  const handleDelete = async (id) => {
+    try {
+        const employeeDocRef = doc(db, 'employees', id);
+        await deleteDoc(employeeDocRef);
+        console.log(`Deleted employee with ID: ${id}`);
+    } catch (error) {
+        console.error("Error deleting employee: ", error.message);
+    }
+};
 
   return (
     <div className='employee-table-wrapper'>
