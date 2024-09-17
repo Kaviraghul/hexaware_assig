@@ -2,11 +2,15 @@ import React from 'react';
 import './employee_details_table.css';
 import { db } from '../../../firebase/firebase';
 import { deleteDoc, doc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 export default function EmployeeTable({ employees }) {
 
-  const handleEdit = (id) => {
+  const navigate = useNavigate();
+
+  const handleEdit = (id, employee) => {
     console.log(`Edit employee with ID: ${id}`);
+    navigate("/editUser", { state: { employee }});
   };
 
   const handleDelete = async (id) => {
@@ -45,7 +49,7 @@ export default function EmployeeTable({ employees }) {
                 <td className='employee-detail-tile-item'>
                   <button
                     className='employee-detail-edit-btn'
-                    onClick={() => handleEdit(employee.id)}
+                    onClick={() => handleEdit(employee.id, employee)}
                   >
                     Edit
                   </button>
