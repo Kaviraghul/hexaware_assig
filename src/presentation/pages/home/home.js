@@ -10,7 +10,5 @@ export default function HomeScreen(){
         <HomeScreenHeader />
         <EmployeeTable />
       </div>
-
-
     </div>
-}
+} 

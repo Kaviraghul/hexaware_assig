@@ -1,8 +1,11 @@
 .employee-table-wrapper{
     padding: 20px;
-    height: 100%;
     background-color: white;
     border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
 }
 
 .employee-table{
@@ -26,7 +29,6 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    
 }
 
 .employee-detail-column-title{
@@ -34,6 +36,12 @@
 }
 
 .employee-detail-tile-item{
-    
+
     padding: 5px 10px;
+}
+
+.no-data-img{
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
 }

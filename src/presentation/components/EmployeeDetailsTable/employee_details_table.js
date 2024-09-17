@@ -3,10 +3,7 @@ import './employee_details_table.css';
 
 export default function EmployeeTable() {
   
-  const [employees, setEmployees] = useState([
-    { id: 1, firstName: 'John', secondName: 'Doe', gender: 'Male', location: 'New York' },
-    { id: 2, firstName: 'Jane', secondName: 'Smith', gender: 'Female', location: 'Los Angeles' }
-  ]);
+  const [employees, setEmployees] = useState([]);
 
   
   const handleEdit = (id) => {
@@ -21,7 +18,8 @@ export default function EmployeeTable() {
 
   return (
     <div className='employee-table-wrapper'>
-      <table className="employee-table">
+      {employees.length == 0 && <img className='no-data-img' src='assets/png/no_data.png' />}
+      {employees.length > 1 && <table className="employee-table">
         <thead>
           <tr>
             <th className='employee-detail-column-title'>First Name</th>
@@ -46,7 +44,10 @@ export default function EmployeeTable() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> }
+      
     </div>
   );
 }
+
+
