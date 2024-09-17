@@ -2,9 +2,9 @@ import { useState } from "react";
 import "./login_form.css";
 import { doSignInWithEmailAndPassword } from "../../../services/firebase_user_services";
 import { Navigate, useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify"; 
 import 'react-toastify/dist/ReactToastify.css';
-import useAuth from "../../../context/auth_context";
+import useAuth from "../../../context_providers/authentication_provider";
 
 export default function LoginForm() {
 

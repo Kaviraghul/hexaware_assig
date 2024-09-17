@@ -2,9 +2,13 @@ import React from 'react';
 import './employee_details_table.css';
 import { useNavigate } from 'react-router-dom';
 import { deleteEmployee } from '../../../services/firebase_employee_services';
+import useEmployee from '../../../context_providers/employee_provider';
 
-export default function EmployeeTable({ employees }) {
+export default function EmployeeTable() {
 
+
+  const { employees } = useEmployee();
+  
   const navigate = useNavigate();
 
   const handleEdit = (id, employee) => {
