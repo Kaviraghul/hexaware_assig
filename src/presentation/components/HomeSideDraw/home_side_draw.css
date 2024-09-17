@@ -31,7 +31,7 @@
 
 .home-left-draw-sections {
     display: flex;
-    flex-direction: column; /* Stack sections vertically */
+    flex-direction: column; 
     padding: 20px;
     background-color: black;
 }
@@ -39,20 +39,20 @@
 .draw-section {
     background-color: black;
     padding: 2.5px; 
-    margin-bottom: 10px; /* Spacing between sections */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor for interactive sections */
-    transition: background-color 0.3s ease; /* Smooth background change */
+    margin-bottom: 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .draw-section:hover {
-    background-color: #ddd; /* Change background on hover */
+    background-color: #ddd;
 }
 
 .draw-section p {
     margin: 0;
     padding: 10px;
-    font-size: 18px; /* Adjust text size */
-    color: white; /* Text color */
-    text-align: center; /* Center the text */
+    font-size: 18px;
+    color: white;
+    text-align: center;
 }

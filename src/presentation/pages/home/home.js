@@ -13,8 +13,8 @@ export default function HomeScreen(){
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, 'employees'), (snapshot) => {
       const employeeData = snapshot.docs.map((doc) => {
-        console.log("Document Data:", doc.data()); // Debugging the structure
-        return { id: doc.id, ...doc.data() }; // Spread the entire document data
+        console.log("Document Data:", doc.data()); 
+        return { id: doc.id, ...doc.data() }; 
       });
 
       setEmployees(employeeData);
