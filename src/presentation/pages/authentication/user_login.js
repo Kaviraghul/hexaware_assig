@@ -2,7 +2,7 @@
 import "./user_login.css";
 import LoginForm from "../../components/LoginForm/login_form.js";
 
-export default function LoginPage() {
+export default function Login() {
     return (
         <div className="login-screen-wrapper" >
             <div className="login-screen-logo-heading" >

@@ -8,13 +8,13 @@ export default function EmployeeTable() {
 
 
   const { employees } = useEmployee();
-  
+
   const navigate = useNavigate();
 
   const handleEdit = (id, employee) => {
     console.log(`Edit employee with ID: ${id}`);
-    navigate("/editUser", { state: { employee }});
-  };
+    navigate(`/editEmployee/${id}`, { state: { employee } });
+  };  
 
   const handleDelete = async (id) => {
     try {

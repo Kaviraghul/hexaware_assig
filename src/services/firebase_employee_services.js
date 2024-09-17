@@ -1,4 +1,4 @@
-import { collection, addDoc, updateDoc, deleteDoc, doc, getDocs } from "firebase/firestore";
+import { collection, addDoc, updateDoc, deleteDoc, doc, getDocs, getDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
 export const getEmployees = async () => {
@@ -15,3 +15,12 @@ export const editEmployee = (id, updatedEmployee) => {
 };
 
 export const deleteEmployee = (id) => deleteDoc(doc(db, 'employees', id));
+
+export const getEmployeeById = async (id) => {
+  const employeeDoc = await getDoc(doc(db, "employees", id));
+  if (employeeDoc.exists()) {
+    return { id: employeeDoc.id, ...employeeDoc.data() };
+  } else {
+    throw new Error("Employee not found");
+  }
+};
