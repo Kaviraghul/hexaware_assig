@@ -1,8 +1,7 @@
 import React from 'react';
 import './employee_details_table.css';
-import { db } from '../../../firebase/firebase';
-import { deleteDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import { deleteEmployee } from '../../../services/firebase_employee_services';
 
 export default function EmployeeTable({ employees }) {
 
@@ -15,8 +14,7 @@ export default function EmployeeTable({ employees }) {
 
   const handleDelete = async (id) => {
     try {
-        const employeeDocRef = doc(db, 'employees', id);
-        await deleteDoc(employeeDocRef);
+        await deleteEmployee(id);
         console.log(`Deleted employee with ID: ${id}`);
     } catch (error) {
         console.error("Error deleting employee: ", error.message);

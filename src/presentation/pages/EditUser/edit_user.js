@@ -1,8 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "./edit_user.css";
 import { useState } from "react";
-import { db } from "../../../firebase/firebase";
-import { doc, updateDoc } from "firebase/firestore";
+import { editEmployee } from "../../../services/firebase_employee_services";
 
 export default function EditUserScreen(){
 
@@ -29,18 +28,9 @@ export default function EditUserScreen(){
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const employeeDocRef = doc(db, "employees", employee.id);
-
-            await updateDoc(employeeDocRef, {
-                firstName: employeeDetails.firstName,
-                secondName: employeeDetails.secondName,
-                gender: employeeDetails.gender,
-                location: employeeDetails.location,
-            });
-
+            await editEmployee( employee.id, employeeDetails);
             console.log("Employee details updated successfully!");
             navigate(-1);
-
         } catch (error) {
             console.error("Error updating employee details: ", error);
         }

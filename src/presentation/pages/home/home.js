@@ -14,7 +14,7 @@ export default function HomeScreen(){
     const unsubscribe = onSnapshot(collection(db, 'employees'), (snapshot) => {
       const employeeData = snapshot.docs.map((doc) => {
         console.log("Document Data:", doc.data()); 
-        return { id: doc.id, ...doc.data() }; 
+        return { id: doc.id, ...doc.data() };
       });
 
       setEmployees(employeeData);

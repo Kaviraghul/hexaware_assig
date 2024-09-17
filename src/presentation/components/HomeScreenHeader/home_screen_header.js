@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import "./home_screen_header.css"; // Optional for styling the modal
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../../firebase/firebase";
+import "./home_screen_header.css";
+import { addEmployee } from "../../../services/firebase_employee_services";
 
 export default function HomeScreenHeader() {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -22,22 +21,12 @@ export default function HomeScreenHeader() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("New Employee:", employee);
-    
         try {
-            await addDoc(collection(db, 'employees'), {
-                firstName: employee.firstName,
-                secondName: employee.secondName,
-                gender: employee.gender,
-                location: employee.location,
-                createdAt: new Date() 
-            });
-            
+            await addEmployee(employee);
             console.log("Employee added successfully");
         } catch (error) {
             console.log("Error adding employee:", error.message);
         }
-    
         setIsModalVisible(false);  
         setEmployee({              
             firstName: "",
