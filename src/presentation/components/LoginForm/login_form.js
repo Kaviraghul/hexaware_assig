@@ -11,32 +11,32 @@ export default function LoginForm() {
     const isUserLoggedIn  = useAuth();
     const navigate = useNavigate(); 
 
-    const [userCredentials, setUserCredentials] = useState({
+    const [loginCredentials, setloginCredentials] = useState({
         email: "",
         password: "",
     });
 
-    const [submit, setSubmit] = useState(true);
+    const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
     const [isSigningIn, setIsSigningIn] = useState(false);
 
-    const handleChange = (e) => {
+    const handleInputChange = (e) => {
         const { id, value } = e.target;
 
-        setUserCredentials((prevState) => ({
+        setloginCredentials((prevState) => ({
             ...prevState,
             [id]: value
         }));
 
-        if (id === "email") setSubmit(!(value.trim() && userCredentials.password.trim()));
-        if (id === "password") setSubmit(!(userCredentials.email.trim() && value.trim()));
+        if (id === "email") setIsSubmitDisabled(!(value.trim() && loginCredentials.password.trim()));
+        if (id === "password") setIsSubmitDisabled(!(loginCredentials.email.trim() && value.trim()));
     };
 
-    const onSubmit = async (e) => {
+    const onisSubmitDisabled = async (e) => {
         e.preventDefault();
         if (!isSigningIn) {
             setIsSigningIn(true);
             try {
-                await doSignInWithEmailAndPassword(userCredentials);
+                await doSignInWithEmailAndPassword(loginCredentials);
                 toast.success("Login successful!");
                 navigate("/home"); 
             } catch (error) {
@@ -47,13 +47,13 @@ export default function LoginForm() {
         }
     };
 
-    const onCancel = async (e) => {
+    const handleCancel = async (e) => {
         e.preventDefault();
-        setUserCredentials({
+        setloginCredentials({
             email: "",
             password: "",
         });
-        setSubmit(true);
+        setIsSubmitDisabled(true);
     }
 
     return (
@@ -61,6 +61,7 @@ export default function LoginForm() {
             {isUserLoggedIn && <Navigate to="/home" replace={true} />}
             <div className="login-form-wrapper">
                 <form>
+                    <h1 className="login-form-heading" >Hexaware<br />Assignment</h1>
                     <h2 className="form-heading">Email</h2>
                     <div className="form-input-wrapper">
                         <input
@@ -68,8 +69,8 @@ export default function LoginForm() {
                             className="form-control"
                             id="email"
                             placeholder="Enter email"
-                            value={userCredentials.email}
-                            onChange={handleChange}
+                            value={loginCredentials.email}
+                            onChange={handleInputChange}
                         />
                     </div>
 
@@ -80,20 +81,20 @@ export default function LoginForm() {
                             className="form-control"
                             id="password"
                             placeholder="Enter Password"
-                            value={userCredentials.password}
-                            onChange={handleChange}
+                            value={loginCredentials.password}
+                            onChange={handleInputChange}
                         />
                     </div>
-                    <br />
+                   
                     <div className="button-container">
                         <button
                             className="button-submit"
-                            disabled={submit}
-                            onClick={onSubmit}
+                            disabled={isSubmitDisabled}
+                            onClick={onisSubmitDisabled}
                         >
                             Submit
                         </button>
-                        <button className="button-cancel" onClick={onCancel} >Cancel</button>
+                        <button className="button-cancel" onClick={handleCancel} >Cancel</button>
                     </div>
                 </form>
             </div>

@@ -1,47 +1,60 @@
-.employee-table-wrapper{
+.employee-table-wrapper {
     padding: 20px;
     background-color: white;
     border-radius: 30px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     height: 70vh;
 }
 
-.employee-table{
-    background-color: black;
+.employee-table {
+    background-color: #f0f0f0; 
     width: 100%;
+    border-collapse: collapse;
 }
 
-.employee-detail-edit-btn{
-    margin-right: 10px;
+.employee-detail-header {
+    padding: 10px;
     background-color: #065ba9;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    text-align: left;
+    font-weight: bold;
 }
 
-.employee-detail-delete-btn{
-    margin-right: 10px;
-    background-color: #e92c30;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.employee-detail-column-title{
+.employee-detail-cell {
     padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
-.employee-detail-tile-item{
-    padding: 5px 10px;
+.edit-employee-btn, .delete-employee-btn {
+    background-color: transparent;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.no-data-img{
-    justify-content: center;
-    align-items: center;
+.edit-employee-btn {
+    margin-right: 5px;
+    background-color: #065ba9;
+}
+
+.edit-employee-btn:hover {
+    background-color: #044a7c;
+}
+
+.delete-employee-btn {
+    margin-right: 5px;
+    background-color: #e92c30;
+}
+
+.delete-employee-btn:hover {
+    background-color: #b92324;
+}
+
+.no-data-placeholder {
+    display: block;
+    margin: 0 auto;
     width: 30vw;
+    max-width: 300px;
 }
-

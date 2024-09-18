@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { getEmployees } from "../services/firebase_employee_services";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase/firebase"; 
 
 export const EmployeeContext = createContext();
 
@@ -7,11 +8,15 @@ export const EmployeeProvider = ({ children }) => {
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-    const fetchEmployees = async () => {
-      const employeeData = await getEmployees();
+    const unsubscribe = onSnapshot(collection(db, "employees"), (snapshot) => {
+      const employeeData = snapshot.docs.map(doc => ({
+        id: doc.id, 
+        ...doc.data(),
+      }));
       setEmployees(employeeData);
-    };
-    fetchEmployees();
+    });
+
+    return () => unsubscribe();
   }, []);
 
   return (
@@ -24,4 +29,3 @@ export const EmployeeProvider = ({ children }) => {
 export default function useEmployee() {
   return useContext(EmployeeContext);
 }
-
