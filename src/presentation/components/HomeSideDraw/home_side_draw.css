@@ -1,55 +1,60 @@
-.home-left-draw{
+.home-container {
+    display: flex;
     height: 100vh;
-    width: 40vh;
-        background-color: black;
 }
 
+.home-right-content {
+    flex-grow: 1;
+    padding: 20px;
+    color: #065ba9;
+}
+
+.home-left-draw {
+    width: 40vh;
+    height: 100vh; 
+    background-color: #065ba9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .home-left-draw-logo {
-    background-color: black;
-
+    background-color: #065ba9;
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     padding: 20px;
-    gap: 15px; 
-  }
+    gap: 15px;
+}
 
-
-  
-  .home-screen-logo {
-    background-color: black;
-    width: 3.5vw;
-  }
-  
-  .home-left-draw p {
-    margin: 0; 
-    line-height: 1.2; 
+.home-left-draw p {
+    margin: 0;
+    line-height: 1.2;
     color: white;
     font-size: 30px;
     font-weight: bold;
-    background-color: black;
+    background-color: #065ba9;
 }
-
 
 .home-left-draw-sections {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     padding: 20px;
-    background-color: black;
+    background-color: #065ba9;
+    flex-grow: 1;
 }
 
 .draw-section {
-    background-color: black;
-    padding: 2.5px; 
-    margin-bottom: 10px; 
+    background-color: #065ba9;
+    padding: 2.5px;
+    margin-bottom: 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .draw-section:hover {
-    background-color: #ddd;
+    background-color: white;
 }
 
 .draw-section p {
@@ -58,4 +63,30 @@
     font-size: 18px;
     color: white;
     text-align: center;
+}
+
+
+.active-section {
+    background-color: white; 
+}
+
+.active-section p {
+    font-weight: bold;
+}
+
+.draw-section {
+    padding: 2.5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.draw-section:hover {
+    background-color: white;
+}
+
+.active {
+    background-color: #044a7c;
+    border: 2px solid white;
 }
