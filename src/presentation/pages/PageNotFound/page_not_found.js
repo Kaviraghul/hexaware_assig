@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { pathName } from '../../../App'
+import { pathName } from '../../../utils/app_routes'
 
 function PageNotFound() {
   return (
