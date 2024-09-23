@@ -3,7 +3,7 @@ import { useState } from "react";
 import { EmployeeTable, HomeScreenHeader, HomeSideDraw } from "../../components/components";
 import "./home.css";
 
-export default function HomeScreen() {
+export default function HomePage() {
   const { employees } = useEmployee();
   const [selectedSection, setSelectedSection] = useState("Employee");
 

@@ -2,9 +2,9 @@ import {  useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {  getEmployeeById } from "../../../services/firebase_employee_services";
 import { EmployeeDetailsForm } from "../../components/components";
-import "./edit_user.css";
+import "./edit_employee.css";
 
-export default function EditEmployee() {
+export default function EditEmployeePage() {
    const { employeeId } = useParams();
 
   const [employeeDetails, setEmployeeDetails] = useState({
