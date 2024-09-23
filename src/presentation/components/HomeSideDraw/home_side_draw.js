@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function HomeSideDraw({ setSelectedSection }) {
 
-  const [activeSection, setActiveSection] = useState("Dashboard");
+  const [activeSection, setActiveSection] = useState("Employee");
 
 
   const handleSectionClick = (section) => {

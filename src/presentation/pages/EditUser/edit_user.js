@@ -1,11 +1,11 @@
 import {  useParams } from "react-router-dom";
-import "./edit_user.css";
 import { useEffect, useState } from "react";
 import {  getEmployeeById } from "../../../services/firebase_employee_services";
-import EmployeeDetailsForm from "../../components/EmployeeDetailsForm/employee_details_form";
+import { EmployeeDetailsForm } from "../../components/components";
+import "./edit_user.css";
 
 export default function EditEmployee() {
-   const { id } = useParams();
+   const { employeeId } = useParams();
 
   const [employeeDetails, setEmployeeDetails] = useState({
     firstName: '',
@@ -17,7 +17,7 @@ export default function EditEmployee() {
   useEffect(() => {
     const fetchEmployee = async () => { 
       try {
-        const employee = await getEmployeeById(id);
+        const employee = await getEmployeeById(employeeId);
         setEmployeeDetails({
           firstName: employee.firstName,
           secondName: employee.secondName,
@@ -30,11 +30,11 @@ export default function EditEmployee() {
     };
 
     fetchEmployee();
-  }, [id]);
+  }, [employeeId]);
 
   return (
     <div className="edit-employee-details-wrapper">
-      <EmployeeDetailsForm existingEmployeeId={id} existingEmployee={employeeDetails} />
+      <EmployeeDetailsForm existingEmployeeId={employeeId} existingEmployee={employeeDetails} />
     </div>
   );
 }

@@ -1,10 +1,7 @@
 import useEmployee from "../../../context_providers/employee_provider";
-import EmployeeTable from "../../components/EmployeeDetailsTable/employee_details_table";
-import HomeScreenHeader from "../../components/HomeScreenHeader/home_screen_header";
-import HomeSideDraw from "../../components/HomeSideDraw/home_side_draw";
-
-import "./home.css";
 import { useState } from "react";
+import { EmployeeTable, HomeScreenHeader, HomeSideDraw } from "../../components/components";
+import "./home.css";
 
 export default function HomeScreen() {
   const { employees } = useEmployee();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./home_screen_header.css";
-import EmployeeDetailsForm from "../EmployeeDetailsForm/employee_details_form";
+import { EmployeeDetailsForm } from "../components";
 
 export default function HomeScreenHeader() {
     const [isModalVisible, setIsModalVisible] = useState(false);
